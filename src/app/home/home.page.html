@@ -2,24 +2,23 @@
 
   <div class="wrapper">
 
-
+    
     <ion-grid class="containerCalculo">
-        <div class="principal" >
-          <ion-row>
-              <textarea class="stringOperacion"
-                placeholder="0" 
-                [(ngModel)]="stringOperacion" 
-                (ngModelChange)="igual()">
-                {{stringOperacion}}
-              </textarea>
-          </ion-row>
-      </div>
-      <div class="resultado">
-        <ion-row>
-          <ion-input  [(ngModel)]=total hidden ></ion-input>
-        </ion-row>
-      </div>  
-    </ion-grid>
+      <div>
+      <ion-row>
+        <ion-input class="principal" 
+          placeholder="0" 
+          [(ngModel)]="stringOperacion" 
+          (ngModelChange)="igual()">
+        </ion-input>
+      </ion-row>
+    </div>
+    <div>
+      <ion-row>
+        <ion-input class="resultado" [(ngModel)]=total hidden ></ion-input>
+      </ion-row>
+    </div>  
+  </ion-grid>
 
 
   <ion-grid class="container">
