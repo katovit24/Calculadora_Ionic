@@ -1,0 +1,76 @@
+<ion-content [fullscreen]="true">
+
+  <div class="wrapper">
+
+
+    <ion-grid class="containerCalculo">
+        <div class="principal" >
+          <ion-row>
+              <textarea class="stringOperacion"
+                placeholder="0" 
+                [(ngModel)]="stringOperacion" 
+                (ngModelChange)="igual()">
+                {{stringOperacion}}
+              </textarea>
+          </ion-row>
+      </div>
+      <div class="resultado">
+        <ion-row>
+          <ion-input  [(ngModel)]=total hidden ></ion-input>
+        </ion-row>
+      </div>  
+    </ion-grid>
+
+
+  <ion-grid class="container">
+      
+    <ion-row>
+          <ion-button size="large" (click)="restart()">C</ion-button>
+          <ion-button size="large" >
+            <ion-icon slot="icon-only" name="backspace-outline" ></ion-icon>
+          </ion-button>
+          <ion-button size="large">
+            <ion-icon class="material-icons">percent</ion-icon>
+          </ion-button >
+          <ion-button class="dividir" size="large" (click)="addSymbol(operadores.get('dividir')?.simbolo??'/')">/</ion-button>
+      </ion-row>
+
+      <ion-row>
+          <ion-button size="large" (click)="add( listaNumeros[7])" >7</ion-button>
+          <ion-button size="large" (click)="add(listaNumeros[8])">8</ion-button>
+          <ion-button size="large" (click)="add( listaNumeros[9])">9</ion-button>
+          <ion-button size="large" (click)="addSymbol(operadores.get('sumar')?.simbolo??'+')" >
+            <ion-icon slot="icon-only" name="add-outline"></ion-icon>
+          </ion-button>
+      </ion-row>
+
+      <ion-row>
+          <ion-button size="large" (click)="add(listaNumeros[4])">4</ion-button>      
+          <ion-button size="large" (click)="add( listaNumeros[5])">5</ion-button>      
+          <ion-button size="large" (click)="add(listaNumeros[6])">6</ion-button>        
+          <ion-button size="large" (click)="addSymbol(operadores.get('multiplicar')?.simbolo??'*')"  >
+            <ion-icon slot="icon-only" name="close-outline"  ></ion-icon>
+          </ion-button>      
+      </ion-row>
+
+      <ion-row>       
+          <ion-button size="large" (click)="add( listaNumeros[1])">1</ion-button>             
+          <ion-button size="large" (click)="add( listaNumeros[2])">2</ion-button>      
+          <ion-button size="large" (click)="add( listaNumeros[3])">3</ion-button>
+          <ion-button size="large" (click)="addSymbol(operadores.get('restar')?.simbolo??'-')" >
+            <ion-icon slot="icon-only" name="remove-outline"></ion-icon>
+          </ion-button>
+      </ion-row>
+
+      <ion-row>
+          <ion-button size="large">?</ion-button>
+          <ion-button size="large" (click)="add(listaNumeros[0])">0</ion-button>
+          <ion-button size="large">,</ion-button>
+          <ion-button size="large"(click)="addSymbol(operadores.get('igual')?.simbolo??'=')" (click)="igual()" >
+            <ion-icon slot="icon-only" name="reorder-two-outline"></ion-icon>
+          </ion-button>
+      </ion-row>
+
+  </ion-grid>
+</div>
+</ion-content>
